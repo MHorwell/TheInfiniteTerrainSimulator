@@ -2,26 +2,28 @@ package theInfiniteTerrainSimulator;
 
 import java.util.Random;
 
-public class Feature extends Tile {
+public class Feature extends Tile{
 	// attributes
 	private int featureNumber;
 
 	// constructors
-	public Feature(int vTileType, int xCoordinate, int yCoordinate, boolean vTileHasFeature, int featureNumber,
-			String featureDescription) {
-		super(vTileType, xCoordinate, yCoordinate, vTileHasFeature);
-		this.setHasFeature(true);
+	public Feature(int tileType, int xCoordinate, int yCoordinate, int featureNumber) {
+		super(tileType, xCoordinate, yCoordinate);
+		this.featureNumber = setFeatureNumber();
+		this.xCoordinate = (this.PlayerXCoordinate + random);
+		this.yCoordinate = (this.PlayerYCoordinate + random);
+		
 	}
 	
 	// methods
 
-	public int getFeatureNumber() {
+	public int setFeatureNumber() {
 		Random randomInt = new Random();
 		return randomInt.nextInt(4);
 	}
 
 	public String featureDescription() {
-		switch(getFeatureNumber()) {
+		switch(this.featureNumber) {
 		case 1: return "You see a box of treasure maybe this will give some meaning to your life.";
 		case 2: return "You see an abandoned hut, somehow it's more inviting than your apartment.";
 		case 3: return "A sword lies on the ground but what's the point in picking it up? It's not like you could ever use it.";
@@ -32,7 +34,8 @@ public class Feature extends Tile {
 		
 	public void featureDiscovered() {
 		System.out.println(this.featureDescription());
-		this.setHasFeature(false);
-		
+		new Feature	
 	}
+	
+	
 }

@@ -5,19 +5,23 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import theInfiniteTerrainSimulator.Feature;
+import theInfiniteTerrainSimulator.Player;
+import theInfiniteTerrainSimulator.Tile;
 
 public class TITSTest {
 	
 	@Test 
-	public void TestLook() {
-		tileType = 1;
+	public void testDescription() {
+		Tile testTile = new Tile(1,1,1);
 		assertEquals("You see a lone tree swaying in the breeze, it's dead. Much like your hopes and dreams.", 
-				look(tileType));
+				testTile.getTileType());
 	}
 	
 	@Test
 	public void testNearestFeature() {
-		assertEquals(5.00,nearestFeature());
+		Player testPlayer = new Player(0, 0);
+		Feature nearestFeature = new Feature(1, 0, 1, 1);
+		assertEquals(5.00,calculateDistance(testPlayer, nearestFeature));
 	}
 	
 	@Test

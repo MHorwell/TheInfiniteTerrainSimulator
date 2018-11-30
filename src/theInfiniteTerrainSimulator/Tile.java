@@ -1,32 +1,23 @@
 package theInfiniteTerrainSimulator;
 
-import zoo.Zoo;
 
-public abstract class Tile {
+public class Tile {
 
 	// attributes
 	private int tileType;
-	private int xCoordinate;
-	private int yCoordinate;
-	private boolean hasFeature;
+	protected int xCoordinate;
+	protected int yCoordinate;
 
 	// constructors
-	public Tile(int vTileType, int xCoordinate, int yCoordinate, boolean vTileHasFeature) {
+	public Tile(int vTileType, int xCoordinate, int yCoordinate) {
 		this.tileType = vTileType;
-		this.setHasFeature(vTileHasFeature);
 		this.xCoordinate = xCoordinate;
 		this.yCoordinate = yCoordinate;
 	}
 
 	// methods
 	public String tileDescription(){
-		if (this.hasFeature == true){
-			Feature newfeature = new Feature();
-		
-			return newfeature.featureDescription();
-		}
-		else {
-			
+
 			switch(tileType) {
 			case 1: return "You see a lone tree swaying in the breeze, it's dead. Much like your hopes and dreams.";
 			case 2: return "There's some grass.";
@@ -38,12 +29,12 @@ public abstract class Tile {
 			case 8: return "The plains stretch out as far as the eye can see. Maybe this is what death is.";
 			case 9: return "Some sheep are grazing nearby, best keep your distance, you know you couldn't take them in a fight.";
 			case 10: return "You see a herd of horses. It's a shame you never learnt to ride, then they could've been useful.";
-			}
-			
-			return: "No description for this place found. Maybe this is the way out?"
+			default: return "No description for this place found. Maybe this is the way out?";
 		}
 	}
-
-	public void setHasFeature(boolean hasFeature) {
-		this.hasFeature = hasFeature;
+	
+	public int getTileType() {
+		return this.tileType;
 	}
+}
+

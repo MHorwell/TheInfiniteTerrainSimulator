@@ -3,6 +3,8 @@ package theInfiniteTerrainSimulator;
 import java.util.Random;
 
 public class Feature extends Tile{
+
+	Random randomInt = new Random();
 	// attributes
 	private int featureNumber;
 
@@ -10,15 +12,11 @@ public class Feature extends Tile{
 	public Feature(int tileType, int xCoordinate, int yCoordinate, int featureNumber) {
 		super(tileType, xCoordinate, yCoordinate);
 		this.featureNumber = setFeatureNumber();
-		this.xCoordinate = (this.getPlayerXCoordinate() + random);
-		this.yCoordinate = (this.PlayerYCoordinate + random);
-		
 	}
 	
 	// methods
 
 	public int setFeatureNumber() {
-		Random randomInt = new Random();
 		return randomInt.nextInt(4);
 	}
 
@@ -32,9 +30,25 @@ public class Feature extends Tile{
 		return "Error: Feature not found. Good job breaking the game.";
 				}
 		
-	public void featureDiscovered() {
+	public Feature featureDiscovered() {
 		System.out.println(this.featureDescription());
+		return new Feature(setTileType(), setFeatureXCoord(), setFeatureYCoord(), setFeatureNumber());
 	}
 	
+	public int getFeatureXCoord() {
+		return this.xCoordinate;
+	}
 	
+	public int getFeatureYCoord() {
+		return this.yCoordinate;
+	}
+	
+	public int setFeatureXCoord() {
+		return this.xCoordinate - 5 + randomInt.nextInt(10);
+	}
+	
+	public int setFeatureYCoord() {
+		return this.yCoordinate - 5 + randomInt.nextInt(10);
+	}
+
 }

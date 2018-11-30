@@ -1,7 +1,9 @@
 package theInfiniteTerrainSimulator;
 
+import java.util.Random;
 
 public class Tile {
+	Random randomInt = new Random();
 
 	// attributes
 	private int tileType;
@@ -33,8 +35,12 @@ public class Tile {
 		}
 	}
 	
-	public int getTileType() {
-		return this.tileType;
+	public int setTileType() {
+		return randomInt.nextInt(10);
+	}
+	
+	public String getTileDescription() {
+		return this.tileDescription(tileType);
 	}
 }
 

@@ -12,10 +12,7 @@ public class Game {
 		}
 	}
 	
-	
-	public int calculateDistance(Feature(), Player()) {
-		return 0;
-	}
+
 
 	
 

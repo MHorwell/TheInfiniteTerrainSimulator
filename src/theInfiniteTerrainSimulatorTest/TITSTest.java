@@ -14,14 +14,14 @@ public class TITSTest {
 	public void testDescription() {
 		Tile testTile = new Tile(1,1,1);
 		assertEquals("You see a lone tree swaying in the breeze, it's dead. Much like your hopes and dreams.", 
-				testTile.getTileType());
+				testTile.getTileDescription());
 	}
 	
 	@Test
 	public void testNearestFeature() {
 		Player testPlayer = new Player(0, 0);
-		Feature nearestFeature = new Feature(1, 0, 1, 1);
-		assertEquals(5.00,calculateDistance(testPlayer, nearestFeature));
+		Feature testFeature = new Feature(1, 0, 1, 1);
+		assertEquals(1,testPlayer.calculateDistance(testFeature, testPlayer),0.2);
 	}
 	
 	@Test

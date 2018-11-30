@@ -9,6 +9,8 @@ public class Player {
 
 	// Constructors
 	public Player(int playerXCoordinate, int playerYCoordinate) {
+		this.playerXCoordinate = playerXCoordinate;
+		this.playerYCoordinate = playerYCoordinate;
 
 	}
 
@@ -41,6 +43,13 @@ public class Player {
 	
 	public int getPlayerYCoordinate() {
 		return this.playerYCoordinate;
+	}
+	
+	public double calculateDistance(Feature featureLocation, Player playerLocation) {
+		int xDistance = featureLocation.xCoordinate - playerLocation.playerXCoordinate;
+		int yDistance = featureLocation.yCoordinate - playerLocation.playerXCoordinate;
+		double distance = Math.sqrt((xDistance * xDistance) + (yDistance * yDistance));
+		return distance;
 	}
 
 }

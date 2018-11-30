@@ -10,7 +10,7 @@ public class Feature extends Tile{
 	public Feature(int tileType, int xCoordinate, int yCoordinate, int featureNumber) {
 		super(tileType, xCoordinate, yCoordinate);
 		this.featureNumber = setFeatureNumber();
-		this.xCoordinate = (this.PlayerXCoordinate + random);
+		this.xCoordinate = (this.getPlayerXCoordinate() + random);
 		this.yCoordinate = (this.PlayerYCoordinate + random);
 		
 	}
@@ -34,7 +34,6 @@ public class Feature extends Tile{
 		
 	public void featureDiscovered() {
 		System.out.println(this.featureDescription());
-		new Feature	
 	}
 	
 	

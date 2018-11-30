@@ -16,9 +16,9 @@ public class Tile {
 	}
 
 	// methods
-	public String tileDescription(){
-
-			switch(tileType) {
+	public String tileDescription(int tileType){
+		
+		switch(tileType) {
 			case 1: return "You see a lone tree swaying in the breeze, it's dead. Much like your hopes and dreams.";
 			case 2: return "There's some grass.";
 			case 3: return "You see a house in the distance. It's much nicer than yours.";

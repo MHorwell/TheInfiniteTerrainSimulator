@@ -14,7 +14,7 @@ public class Game {
 			String direction = userInput.nextLine();
 			pete.movePlayer(direction);
 			
-			final Tile newTile = new Tile(Tile.setTileType(),
+			Tile newTile = new Tile(Tile.setTileType(),
 					pete.getPlayerXCoordinate(),
 					pete.getPlayerYCoordinate());
 			System.out.println(newTile.getTileDescription());

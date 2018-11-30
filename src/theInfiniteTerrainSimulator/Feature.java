@@ -20,9 +20,9 @@ public class Feature extends Tile{
 		return randomInt.nextInt(4);
 	}
 
-	public String featureDescription() {
-		switch(this.featureNumber) {
-		case 1: return "You see a box of treasure maybe this will give some meaning to your life.";
+	public String featureDescription(int featureNumber) {
+		switch(featureNumber) {
+		case 1: return "You see a box of treasure, maybe this will give some meaning to your life.";
 		case 2: return "You see an abandoned hut, somehow it's more inviting than your apartment.";
 		case 3: return "A sword lies on the ground but what's the point in picking it up? It's not like you could ever use it.";
 		case 4: return "You see a small silver pendant amongst the dirt, but it's gonna take much more than that to make you attractive.";

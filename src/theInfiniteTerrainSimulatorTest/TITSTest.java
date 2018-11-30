@@ -26,7 +26,8 @@ public class TITSTest {
 	
 	@Test
 	public void testFeatureDescription() {
-		assertEquals("You see a box of Treasure, maybe this will give some meaning to your life.",
-				Feature.featureDescription(1));
+		Feature testFeature = new Feature(1, 0, 1, 1);
+		assertEquals("You see a box of treasure, maybe this will give some meaning to your life.",
+				testFeature.featureDescription(1));
 	}
 }

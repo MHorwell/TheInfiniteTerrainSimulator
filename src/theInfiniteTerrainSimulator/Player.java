@@ -1,6 +1,5 @@
 package theInfiniteTerrainSimulator;
 
-import java.util.Scanner;
 
 public class Player {
 	// Attributes
@@ -15,16 +14,18 @@ public class Player {
 
 	// Methods
 	public void movePlayer(String direction) {
-		if (direction == "N") {
+		if (direction.equals("N")) {
+			System.out.println("You go North");
 			this.playerYCoordinate++;
 		}
-		else if (direction == "E") {
+		else if (direction.equals("E")) {
+			System.out.println("You go East");
 			playerXCoordinate++;
 		}
-		else if (direction == "S") {
+		else if (direction.equals("S")) {
 			playerYCoordinate--;
 		}
-		else if (direction == "W") {
+		else if (direction.equals("W")) {
 			playerXCoordinate--;
 		}
 	}

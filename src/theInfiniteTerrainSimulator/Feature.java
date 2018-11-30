@@ -11,7 +11,7 @@ public class Feature extends Tile{
 	// constructors
 	public Feature(int tileType, int xCoordinate, int yCoordinate, int featureNumber) {
 		super(tileType, xCoordinate, yCoordinate);
-		this.featureNumber = setFeatureNumber();
+		this.featureNumber = featureNumber;
 	}
 	
 	// methods
@@ -31,7 +31,7 @@ public class Feature extends Tile{
 				}
 		
 	public Feature featureDiscovered() {
-		System.out.println(this.featureDescription());
+		System.out.println(this.featureDescription(this.featureNumber));
 		return new Feature(setTileType(), setFeatureXCoord(), setFeatureYCoord(), setFeatureNumber());
 	}
 	

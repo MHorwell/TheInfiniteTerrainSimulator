@@ -23,9 +23,11 @@ public class Player {
 			playerXCoordinate++;
 		}
 		else if (direction.equals("S")) {
+			System.out.println("You go South");
 			playerYCoordinate--;
 		}
 		else if (direction.equals("W")) {
+			System.out.println("You go West");
 			playerXCoordinate--;
 		}
 	}

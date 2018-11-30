@@ -11,27 +11,19 @@ public class Player {
 	public Player(int playerXCoordinate, int playerYCoordinate) {
 		this.playerXCoordinate = playerXCoordinate;
 		this.playerYCoordinate = playerYCoordinate;
-
 	}
 
 	// Methods
-	public void movePlayer() {
-		Scanner userInput = new Scanner(System.in);
-
-		String direction = userInput.nextLine();
-
+	public void movePlayer(String direction) {
 		if (direction == "N") {
-			playerYCoordinate++;
+			this.playerYCoordinate++;
 		}
-
 		else if (direction == "E") {
 			playerXCoordinate++;
 		}
-
 		else if (direction == "S") {
 			playerYCoordinate--;
 		}
-
 		else if (direction == "W") {
 			playerXCoordinate--;
 		}

@@ -3,7 +3,7 @@ package theInfiniteTerrainSimulator;
 import java.util.Random;
 
 public class Tile {
-	Random randomInt = new Random();
+	static Random randomInt = new Random();
 
 	// attributes
 	private int tileType;
@@ -11,8 +11,8 @@ public class Tile {
 	protected int yCoordinate;
 
 	// constructors
-	public Tile(int vTileType, int xCoordinate, int yCoordinate) {
-		this.tileType = vTileType;
+	public Tile(int tileType,int xCoordinate, int yCoordinate) {
+		this.tileType = tileType;
 		this.xCoordinate = xCoordinate;
 		this.yCoordinate = yCoordinate;
 	}
@@ -35,12 +35,16 @@ public class Tile {
 		}
 	}
 	
-	public int setTileType() {
+	public static int setTileType() {
 		return randomInt.nextInt(10);
 	}
 	
 	public String getTileDescription() {
 		return this.tileDescription(tileType);
+	}
+	
+	public int getTileType() {
+		return this.tileType;
 	}
 }
 

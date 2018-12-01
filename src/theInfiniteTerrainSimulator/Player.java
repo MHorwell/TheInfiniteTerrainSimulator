@@ -41,8 +41,8 @@ public class Player {
 	}
 	
 	public double calculateDistance(Feature feature, Player player) {
-		int xDistance = feature.xCoordinate - player.playerXCoordinate;
-		int yDistance = feature.yCoordinate - player.playerXCoordinate;
+		int xDistance = feature.getFeatureXCoord() - player.getPlayerXCoordinate();
+		int yDistance = feature.getFeatureYCoord() - player.getPlayerYCoordinate();
 		double distance = Math.sqrt((xDistance * xDistance) + (yDistance * yDistance));
 		return distance;
 	}

@@ -9,6 +9,7 @@ public class Game {
 		Player pete = new Player(0, 0);
 		Feature newFeature = new Feature(1, 1, 1);
 		
+		
 		while (cont.equals("y")) {
 			
 			Scanner userInput = new Scanner(System.in);
@@ -17,6 +18,7 @@ public class Game {
 			Tile newTile = new Tile(Tile.setTileType(),
 					pete.getPlayerXCoordinate(),
 					pete.getPlayerYCoordinate());
+			
 			System.out.println(newTile.getTileDescription());
 			System.out.println("X = " + pete.getPlayerXCoordinate() + ", Y = " + pete.getPlayerYCoordinate());
 			System.out.println(pete.calculateDistance(newFeature, pete));

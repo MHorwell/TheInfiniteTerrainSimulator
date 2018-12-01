@@ -7,7 +7,8 @@ public class Game {
 	public void playGame() {
 		String cont = "y"; 
 		Player pete = new Player(0, 0);
-		Feature newFeature = new Feature(1, 1, 1, 1);
+		Feature newFeature = new Feature(1, 1, 1);
+		newFeature.setFeatureNumber();
 		
 		while (cont.equals("y")) {
 			
@@ -17,13 +18,18 @@ public class Game {
 			Tile newTile = new Tile(Tile.setTileType(),
 					pete.getPlayerXCoordinate(),
 					pete.getPlayerYCoordinate());
-			if (pete.getPlayerXCoordinate() == newFeature.getFeatureXCoord() &&
-					pete.getPlayerYCoordinate() == newFeature.getFeatureYCoord()) {
-				Feature newfeature = newFeature.featureDiscovered();
-			}
 			System.out.println(newTile.getTileDescription());
 			System.out.println("X = " + pete.getPlayerXCoordinate() + ", Y = " + pete.getPlayerYCoordinate());
 			System.out.println(pete.calculateDistance(newFeature, pete));
+			System.out.println("Feature = " + newFeature.getFeatureXCoord() + ", " + newFeature.getFeatureYCoord());
+			if (pete.getPlayerXCoordinate() == newFeature.getFeatureXCoord() &&
+				pete.getPlayerYCoordinate() == newFeature.getFeatureYCoord()) {
+				System.out.println(newFeature.featureDescription(newFeature.getFeatureNumber()));
+				System.out.println("Continue? (y or n)");
+				cont = userInput.nextLine();
+			} 
+			
+
 		}
 	}
 	

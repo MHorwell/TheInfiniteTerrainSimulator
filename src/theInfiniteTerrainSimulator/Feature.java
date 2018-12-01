@@ -12,11 +12,16 @@ public class Feature extends Tile{
 	public Feature(int tileType, int xCoordinate, int yCoordinate) {
 		super(tileType, xCoordinate, yCoordinate);
 	}
+	public Feature(int tileType, int xCoordinate, int yCoordinate, int featureNumber) {
+		super(tileType, xCoordinate, yCoordinate);
+		this.featureNumber = featureNumber;
+		
+	}
 	
 	// methods
 
-	public void setFeatureNumber() {
-		this.featureNumber = randomInt.nextInt(3);
+	public int setFeatureNumber() {
+		return randomInt.nextInt(3);
 	}
 
 	public String featureDescription(int featureNumber) {

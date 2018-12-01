@@ -8,8 +8,6 @@ public class Game {
 		String cont = "y"; 
 		Player pete = new Player(0, 0);
 		Feature newFeature = new Feature(1, 1, 1);
-
-		newFeature.setFeatureNumber();
 		
 		while (cont.equals("y")) {
 			
@@ -29,7 +27,10 @@ public class Game {
 				System.out.println(newFeature.featureDescription(newFeature.getFeatureNumber()));
 				System.out.println("Continue? (y or n)");
 				cont = userInput.nextLine();
-				newFeature = new Feature(Tile.setTileType(),newFeature.setFeatureXCoord(),newFeature.setFeatureYCoord());;
+				newFeature = new Feature(Tile.setTileType(),
+						newFeature.setFeatureXCoord(),
+						newFeature.setFeatureYCoord(),
+						newFeature.setFeatureNumber());
 			}
 
 		}

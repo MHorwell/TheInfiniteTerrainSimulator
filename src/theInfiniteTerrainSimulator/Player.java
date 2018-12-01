@@ -40,9 +40,9 @@ public class Player {
 		return this.playerYCoordinate;
 	}
 	
-	public double calculateDistance(Feature featureLocation, Player playerLocation) {
-		int xDistance = featureLocation.xCoordinate - playerLocation.playerXCoordinate;
-		int yDistance = featureLocation.yCoordinate - playerLocation.playerXCoordinate;
+	public double calculateDistance(Feature feature, Player player) {
+		int xDistance = feature.xCoordinate - player.playerXCoordinate;
+		int yDistance = feature.yCoordinate - player.playerXCoordinate;
 		double distance = Math.sqrt((xDistance * xDistance) + (yDistance * yDistance));
 		return distance;
 	}

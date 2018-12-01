@@ -15,7 +15,6 @@ public class Feature extends Tile{
 	public Feature(int tileType, int xCoordinate, int yCoordinate, int featureNumber) {
 		super(tileType, xCoordinate, yCoordinate);
 		this.featureNumber = featureNumber;
-		
 	}
 	
 	// methods

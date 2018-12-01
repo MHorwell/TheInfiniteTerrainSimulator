@@ -1,5 +1,7 @@
 package theInfiniteTerrainSimulator;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Game {
@@ -8,6 +10,13 @@ public class Game {
 		String cont = "y"; 
 		Player pete = new Player(0, 0);
 		Feature newFeature = new Feature(1, 1, 1);
+		Tile startTile = new Tile(pete.getPlayerXCoordinate(),
+				pete.getPlayerYCoordinate());
+		startTile.setTileType(startTile.generateTileType());
+		List<Tile> tileList = new LinkedList<Tile>();
+		tileList.add(startTile);
+		System.out.println(startTile.getTileDescription(startTile.getTileType()));
+		
 		
 		
 		while (cont.equals("y")) {
@@ -15,21 +24,34 @@ public class Game {
 			Scanner userInput = new Scanner(System.in);
 			String direction = userInput.nextLine();
 			pete.movePlayer(direction);
-			Tile newTile = new Tile(Tile.setTileType(),
-					pete.getPlayerXCoordinate(),
-					pete.getPlayerYCoordinate());
+
 			
-			System.out.println(newTile.getTileDescription());
-			System.out.println("X = " + pete.getPlayerXCoordinate() + ", Y = " + pete.getPlayerYCoordinate());
-			System.out.println(pete.calculateDistance(newFeature, pete));
-			System.out.println("Feature = " + newFeature.getFeatureXCoord() + ", " + newFeature.getFeatureYCoord());
+			for (Tile tiles : tileList) {
+				System.out.print(tiles.getTileType());
+				if (pete.getPlayerXCoordinate() == tiles.getTileX() && pete.getPlayerYCoordinate() == tiles.getTileY()){
+					System.out.println("It's a match");
+					System.out.println(tiles.getTileDescription(tiles.getTileType()));
+					System.out.print(tiles.getTileType());
+				}
+				else {
+					Tile newTile = new Tile(pete.getPlayerXCoordinate(),
+							pete.getPlayerYCoordinate());
+					newTile.setTileType(newTile.generateTileType());
+					tileList.add(newTile);
+					System.out.println("New tile");
+					System.out.println(newTile.getTileDescription(newTile.getTileType()));
+					break;
+				}
+				
+			}
+			System.out.println("Nearest feature is " + pete.calculateDistance(newFeature, pete) + "m away.");
 			
 			if (pete.getPlayerXCoordinate() == newFeature.getFeatureXCoord() &&
 				pete.getPlayerYCoordinate() == newFeature.getFeatureYCoord()) {
 				System.out.println(newFeature.featureDescription(newFeature.getFeatureNumber()));
 				System.out.println("Continue? (y or n)");
 				cont = userInput.nextLine();
-				newFeature = new Feature(Tile.setTileType(),
+				newFeature = new Feature(newFeature.generateTileType(),
 						newFeature.setFeatureXCoord(),
 						newFeature.setFeatureYCoord(),
 						newFeature.setFeatureNumber());

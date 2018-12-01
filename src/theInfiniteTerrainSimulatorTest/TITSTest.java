@@ -14,7 +14,7 @@ public class TITSTest {
 	public void testDescription() {
 		Tile testTile = new Tile(1,1,1);
 		assertEquals("You see a lone tree swaying in the breeze, it's dead. Much like your hopes and dreams.", 
-				testTile.getTileDescription());
+				testTile.getTileDescription(testTile.getTileType()));
 	}
 	
 	@Test

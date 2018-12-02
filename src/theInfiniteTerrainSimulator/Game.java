@@ -14,6 +14,7 @@ public class Game {
 		startTile.setTileType(startTile.generateTileType());
 		List<Tile> tileList = new LinkedList<Tile>();
 		tileList.add(startTile);
+		System.out.println("You awaken on a vast moor, sucks to be you. Move? (N, E, S, W)");
 		System.out.println(startTile.getTileDescription(startTile.getTileType()));
 
 		while (cont.equals("y")) {
@@ -22,8 +23,18 @@ public class Game {
 			String direction = userInput.nextLine();
 			pete.movePlayer(direction);
 			boolean tileExists = false;
+			
+			if (pete.getPlayerXCoordinate() == newFeature.getFeatureXCoord()
+					&& pete.getPlayerYCoordinate() == newFeature.getFeatureYCoord()) {
+				System.out.println(newFeature.featureDescription(newFeature.getFeatureNumber()));
+				System.out.println("Continue? (y or n)");
+				cont = userInput.nextLine();
+				newFeature = new Feature(newFeature.generateTileType(), newFeature.setFeatureXCoord(),
+						newFeature.setFeatureYCoord(), newFeature.setFeatureNumber());
+			}
 
 			for (Tile tiles : tileList) {
+				
 				if (pete.getPlayerXCoordinate() == tiles.getTileX()
 						&& pete.getPlayerYCoordinate() == tiles.getTileY()) {
 					tileExists = true;
@@ -39,16 +50,6 @@ public class Game {
 				System.out.println(newTile.getTileDescription(newTile.getTileType()));
 				tileList.add(newTile);
 				System.out.println("Nearest feature is " + pete.calculateDistance(newFeature, pete) + "m away.");
-			}
-
-
-			if (pete.getPlayerXCoordinate() == newFeature.getFeatureXCoord()
-					&& pete.getPlayerYCoordinate() == newFeature.getFeatureYCoord()) {
-				System.out.println(newFeature.featureDescription(newFeature.getFeatureNumber()));
-				System.out.println("Continue? (y or n)");
-				cont = userInput.nextLine();
-				newFeature = new Feature(newFeature.generateTileType(), newFeature.setFeatureXCoord(),
-						newFeature.setFeatureYCoord(), newFeature.setFeatureNumber());
 			}
 
 		}

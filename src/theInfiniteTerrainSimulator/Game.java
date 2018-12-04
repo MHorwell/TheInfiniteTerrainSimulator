@@ -1,5 +1,6 @@
 package theInfiniteTerrainSimulator;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -7,13 +8,19 @@ import java.util.Scanner;
 public class Game {
 
 	public void playGame() {
+		
 		String cont = "y";
-		Player pete = new Player(0, 0);
+		Player pete = new Player(0, 0, 10);
+	    HealthObserver obs = new HealthObserver(pete.getPlayerHealth());
+	    pete.addObserver(obs);
+
 		Feature newFeature = new Feature(1, 1, 1);
 		Tile startTile = new Tile(pete.getPlayerXCoordinate(), pete.getPlayerYCoordinate());
 		startTile.setTileType(startTile.generateTileType());
-		List<Tile> tileList = new LinkedList<Tile>();
+		Tile deathTile = new Tile(20, 1, -1);
+		List<Tile> tileList = new ArrayList<Tile>();
 		tileList.add(startTile);
+		tileList.add(deathTile);
 		System.out.println("You awaken on a vast moor, sucks to be you. Move? (N, E, S, W)");
 		System.out.println(startTile.getTileDescription(startTile.getTileType()));
 
@@ -31,6 +38,10 @@ public class Game {
 				cont = userInput.nextLine();
 				newFeature = new Feature(newFeature.generateTileType(), newFeature.setFeatureXCoord(),
 						newFeature.setFeatureYCoord(), newFeature.setFeatureNumber());
+			}
+			
+			if (pete.getPlayerXCoordinate() == deathTile.getTileX() && pete.getPlayerYCoordinate() == deathTile.getTileY()){
+				pete.setHealth(5);
 			}
 
 			for (Tile tiles : tileList) {
@@ -52,7 +63,7 @@ public class Game {
 				System.out.println("Nearest feature is " + pete.calculateDistance(newFeature, pete) + "m away.");
 			}
 
-		}
+		} 
 	}
 
 }

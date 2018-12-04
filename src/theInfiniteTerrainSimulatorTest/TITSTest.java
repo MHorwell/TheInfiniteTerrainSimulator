@@ -19,7 +19,7 @@ public class TITSTest {
 	
 	@Test
 	public void testNearestFeature() {
-		Player testPlayer = new Player(0, 0);
+		Player testPlayer = new Player(0, 0,0);
 		Feature testFeature = new Feature(0, 0, 1);
 		assertEquals(1,testPlayer.calculateDistance(testFeature, testPlayer),0.2);
 	}

@@ -50,6 +50,8 @@ public class Tile {
 			return "Some sheep are grazing nearby, best keep your distance, you know you couldn't take them in a fight.";
 		case 0:
 			return "You see a herd of horses. It's a shame you never learnt to ride, then they could've been useful.";
+		case 20:
+			return "You fall into a pit of lava";
 		default:
 			return "No description for this place found. Maybe this is the way out?";
 		}

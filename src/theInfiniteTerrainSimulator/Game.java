@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Game {
 
 	public void playGame() {
+		Scanner userInput = new Scanner(System.in);
 		
 		String cont = "y";
 		Player pete = new Player(0, 0, 10);
@@ -22,10 +23,9 @@ public class Game {
 		tileList.add(deathTile);
 		System.out.println("You awaken on a vast moor, sucks to be you. Move? (N, E, S, W)");
 		System.out.println(startTile.getTileDescription(startTile.getTileType()));
-
+		
 		while (cont.equals("y")) {
 
-			Scanner userInput = new Scanner(System.in);
 			String direction = userInput.nextLine();
 			pete.movePlayer(direction);
 			boolean tileExists = false;
@@ -37,10 +37,6 @@ public class Game {
 				cont = userInput.nextLine();
 				newFeature = new Feature(newFeature.generateTileType(), newFeature.setFeatureXCoord(),
 						newFeature.setFeatureYCoord(), newFeature.setFeatureNumber());
-			}
-			
-			if (pete.getPlayerXCoordinate() == deathTile.getTileX() && pete.getPlayerYCoordinate() == deathTile.getTileY()){
-				pete.setHealth(5);
 			}
 
 			for (Tile tiles : tileList) {
@@ -61,8 +57,13 @@ public class Game {
 				tileList.add(newTile);
 				System.out.println("Nearest feature is " + pete.calculateDistance(newFeature, pete) + "m away.");
 			}
-			userInput.close();
-		} 
+			
+			if (pete.getPlayerXCoordinate() == deathTile.getTileX() && pete.getPlayerYCoordinate() == deathTile.getTileY()){
+				pete.setHealth(5);
+			}
+		}
+		userInput.close(); 
 	}
+
 
 }

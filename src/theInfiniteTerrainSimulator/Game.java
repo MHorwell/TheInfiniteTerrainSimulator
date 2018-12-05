@@ -1,7 +1,6 @@
 package theInfiniteTerrainSimulator;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -62,7 +61,7 @@ public class Game {
 				tileList.add(newTile);
 				System.out.println("Nearest feature is " + pete.calculateDistance(newFeature, pete) + "m away.");
 			}
-
+			userInput.close();
 		} 
 	}
 

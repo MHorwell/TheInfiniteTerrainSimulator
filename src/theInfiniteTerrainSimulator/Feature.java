@@ -9,11 +9,11 @@ public class Feature extends Tile{
 	private int featureNumber;
 
 	// constructors
-	public Feature(int tileType, int xCoordinate, int yCoordinate) {
-		super(tileType, xCoordinate, yCoordinate);
+	public Feature(int xCoordinate, int yCoordinate) {
+		super(xCoordinate, yCoordinate);
 	}
-	public Feature(int tileType, int xCoordinate, int yCoordinate, int featureNumber) {
-		super(tileType, xCoordinate, yCoordinate);
+	public Feature(int xCoordinate, int yCoordinate, int featureNumber) {
+		super(xCoordinate, yCoordinate);
 		this.featureNumber = featureNumber;
 	}
 	

@@ -52,9 +52,12 @@ public class Player extends Observable {
 	}
 
 	public void setHealth(int health) {
-		this.playerHealth = health;
-		setChanged();
-		notifyObservers(health);
+		
+		if (this.playerHealth != health){
+			this.playerHealth = health;
+			setChanged();
+			notifyObservers(health);
+		}
 	}
 
 }

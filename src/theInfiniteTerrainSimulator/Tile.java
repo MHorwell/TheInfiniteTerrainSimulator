@@ -12,7 +12,7 @@ public class Tile {
 
 	// constructors
 	public Tile(int tileType, int xCoordinate, int yCoordinate) {
-		this.setTileType(tileType);
+		this.tileType = (tileType);
 		this.xCoordinate = xCoordinate;
 		this.yCoordinate = yCoordinate;
 	}
@@ -28,8 +28,8 @@ public class Tile {
 		return randomInt.nextInt(10);
 	}
 
-	public String getTileDescription(int tileType) {
-		switch (tileType) {
+	public String getTileDescription() {
+		switch (this.tileType) {
 		case 1:
 			return "You see a lone tree swaying in the breeze, it's dead. Much like your hopes and dreams.";
 		case 2:

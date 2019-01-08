@@ -12,7 +12,7 @@ public class Tile {
 
 	// constructors
 	public Tile(int tileType, int xCoordinate, int yCoordinate) {
-		this.tileType = (tileType);
+		this.tileType = tileType;
 		this.xCoordinate = xCoordinate;
 		this.yCoordinate = yCoordinate;
 	}

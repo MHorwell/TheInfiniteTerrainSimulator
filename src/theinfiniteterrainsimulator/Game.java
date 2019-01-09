@@ -1,4 +1,4 @@
-package theInfiniteTerrainSimulator;
+package theinfiniteterrainsimulator;
 
 import java.util.ArrayList;
 import java.util.List;

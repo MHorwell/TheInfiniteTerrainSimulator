@@ -1,4 +1,4 @@
-package theInfiniteTerrainSimulator;
+package theinfiniteterrainsimulator;
 
 
 
@@ -9,5 +9,4 @@ public class Main {
 		newGame.playGame();
 		}
 		
-	
 }

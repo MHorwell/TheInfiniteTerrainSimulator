@@ -1,12 +1,12 @@
-package theInfiniteTerrainSimulatorTest;
+package theinfiniteterrainsimulatortest;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import theInfiniteTerrainSimulator.Feature;
-import theInfiniteTerrainSimulator.Player;
-import theInfiniteTerrainSimulator.Tile;
+import theinfiniteterrainsimulator.Feature;
+import theinfiniteterrainsimulator.Player;
+import theinfiniteterrainsimulator.Tile;
 
 public class TITSTest {
 	

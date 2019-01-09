@@ -1,4 +1,4 @@
-package theInfiniteTerrainSimulator;
+package theinfiniteterrainsimulator;
 
 import java.util.Random;
 
@@ -22,7 +22,7 @@ public class Feature extends Tile{
 	public int setFeatureNumber() {
 		return randomInt.nextInt(3);
 	}
-
+	
 	public String featureDescription() {
 		switch(this.featureNumber) {
 		case 0: return "You see a box of treasure, maybe this will give some meaning to your life.";

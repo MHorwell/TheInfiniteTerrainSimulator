@@ -3,12 +3,12 @@ package theinfiniteterrainsimulator;
 import java.util.Random;
 
 public class Tile {
-	Random randomInt = new Random();
-
+	
 	// attributes
 	private int tileType;
-	protected int xCoordinate;
-	protected int yCoordinate;
+	private int xCoordinate;
+	private int yCoordinate;
+	protected Random randomInt = new Random();
 
 	// constructors
 	public Tile(int tileType, int xCoordinate, int yCoordinate) {

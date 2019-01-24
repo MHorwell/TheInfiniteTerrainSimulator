@@ -36,7 +36,7 @@ public class Game {
 				System.out.println("Continue? (y or n)");
 				cont = userInput.nextLine();
 				newFeature = new Feature(newFeature.setFeatureXCoord(),
-						newFeature.setFeatureYCoord(), newFeature.setFeatureNumber());
+						newFeature.setFeatureYCoord());
 			}
 
 			for (Tile tiles : tileList) {

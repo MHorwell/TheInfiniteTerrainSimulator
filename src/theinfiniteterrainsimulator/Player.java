@@ -47,8 +47,7 @@ public class Player extends Observable {
 	public double calculateDistance(Feature feature, Player player) {
 		int xDistance = feature.getFeatureXCoord() - player.getPlayerXCoordinate();
 		int yDistance = feature.getFeatureYCoord() - player.getPlayerYCoordinate();
-		double distance = Math.sqrt((xDistance * xDistance) + (yDistance * yDistance));
-		return distance;
+		return Math.sqrt((xDistance * xDistance) + (yDistance * yDistance));
 	}
 
 	public void setHealth(int health) {
